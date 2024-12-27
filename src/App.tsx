@@ -14,6 +14,9 @@ function App() {
         <Route path="/places/new" exact>
           <NewPlace />
         </Route>
+        <Route path="/users" exact>
+          <Users />
+        </Route>
         <Redirect to="/" />
       </Switch>
     </Router>

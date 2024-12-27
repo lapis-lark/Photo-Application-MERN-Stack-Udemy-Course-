@@ -1,8 +1,14 @@
-import React from "react";
-import './UsersList.css';
+import React, { FC } from "react";
+import './UserItem.css';
+import { User } from '../../types/types';
 
-const UsersList = (props) => {
-  return <h1>hi</h1>
+const UserItem: FC<User> = ({id, image, name, placeCount}) => {
+  return (
+    <li className="user-item">
+      <div key={String(id)} id={String(id)}><a href={image}>{name}: {placeCount} places</a>
+      </div>
+    </li>
+  )
 }
 
-export default UsersList;
+export default UserItem;

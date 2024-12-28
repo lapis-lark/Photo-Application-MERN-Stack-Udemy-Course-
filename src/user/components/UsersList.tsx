@@ -7,7 +7,7 @@ import { UsersListProps, User } from '../../types/types';
 
 const UsersList: FC<UsersListProps> = ({items}) => {
 
-  if (items === undefined) {
+  if (items.length === 0) {
     return (
       <div className="center">
         <h2>No users found</h2>
@@ -16,13 +16,14 @@ const UsersList: FC<UsersListProps> = ({items}) => {
   } else {
     return (
       <ul className="users-list">
-        {items.map((user: User) => (<UserItem 
-        key={user.id} 
-        id={user.id} 
-        image={user.image} 
-        name={user.name} 
-        placeCount={user.placeCount}  
-        />
+        {items.map((user: User) => (
+          <UserItem 
+            key={user.id} 
+            id={user.id} 
+            image={user.image} 
+            name={user.name} 
+            placeCount={user.placeCount}  
+          />
         ))}
       </ul>
     )
